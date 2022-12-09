@@ -1,6 +1,6 @@
 # Kujira threat report
 
-https://t.co/X04x2JBcWT
+https://www.youtube.com/watch?v=zz9auv3wTXA
 
 ## Produced for the Cosmos community by Notional Labs
 
