@@ -18,7 +18,7 @@
 ./core/build/kujirad --home data start
 
 # get our "valoper" - alidator operator address
-./core/build/kujirad query account $(./core/build/kujirad --home data --keyring-backend test keys show validator -a)
+./core/build/kujirad query account "$(./core/build/kujirad --home data --keyring-backend test keys show validator -a)"
 
 # get contract 11 from kujira mainnet
 ./core/build/kujirad --node https://kujira-rpc.polkachu.com:443 query wasm list-contract-by-code 11
@@ -56,6 +56,6 @@
 ./core/build/kujirad --home data --keyring-backend test tx wasm execute kujira14hj2tavq8fpesdwxxcu44rty3hh90vhujrvcmstl4zr3txmfvw9sl4e867 '{"mint": {"amount": "10000", "recipient": "kujira1fdsjfm3pfhn6fs227vz98xtzs2qtkpvt545jhg"}}' --from user  --broadcast-mode block -y
 
 # show balances
-./core/build/kujirad --home data query bank balances $(./core/build/kujirad --home data --keyring-backend test keys show luser -a)
+./core/build/kujirad --home data query bank balances "$(./core/build/kujirad --home data --keyring-backend test keys show luser -a)"
 
 
