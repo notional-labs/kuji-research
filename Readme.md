@@ -6,6 +6,18 @@ This repository can be used to conclusively confirm that the USK "fully collater
 
 I think there is a lot more, too.
 
+## Using this repository to confirm infinite mint
+
+First run a node like:
+
+```bash
+bash prepare-node.bash
+```
+
+this will create the "addresses" file.  you then need to modify the addresses found in uskgod.bash
+
+after that, this demonstrates the infinite mint of the "fully collateralized stablecoin" usk.
+
 ## Original script from a friend
 
 Note that you need to change the denom name from stake to ukuji in genesis.json and you also will need to make sure that gov props are dramatically shortened, I went with 60s.

@@ -14,13 +14,13 @@ set -euxo pipefail
 
 echo "validator" > addresses
 ./core/build/kujirad --home data --keyring-backend test keys show validator -a >> addresses
-echo "admin" > addresses
+echo "admin" >> addresses
 ./core/build/kujirad --home data --keyring-backend test keys show admin -a >> addresses
-echo "owner" > addresses
+echo "owner" >> addresses
 ./core/build/kujirad --home data --keyring-backend test keys show owner -a >> addresses
-echo "user" > addresses
+echo "user" >> addresses
 ./core/build/kujirad --home data --keyring-backend test keys show user -a >> addresses
-echo "luser" > addresses
+echo "luser" >> addresses
 ./core/build/kujirad --home data --keyring-backend test keys show luser -a >> addresses
 
 
