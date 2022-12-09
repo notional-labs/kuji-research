@@ -1,0 +1,39 @@
+{
+  "proposal_id": "35",
+  "content": {
+    "@type": "/cosmwasm.wasm.v1.InstantiateContractProposal",
+    "title": "Deploy the USK Controller Contract",
+    "description": "The USK protocol will have multiple markets that use multiple collateral types to mint USK. This contract acts as a simple controller, accessing the underlying denom module from the chain core; authorizing each individual market and routing messages to mint and burn USK",
+    "run_as": "kujira1ghmq7k50rwpsnye39aefngd2k7x9kc2hrqq5xd",
+    "admin": "kujira1ghmq7k50rwpsnye39aefngd2k7x9kc2hrqq5xd",
+    "code_id": "11",
+    "label": "USK Controller",
+    "msg": {
+      "owner": "kujira1tsekaqv9vmem0zwskmf90gpf0twl6k57e8vdnq",
+      "denom": "uusk"
+    },
+    "funds": [
+      {
+        "denom": "ukuji",
+        "amount": "10000000"
+      }
+    ]
+  },
+  "status": "PROPOSAL_STATUS_PASSED",
+  "final_tally_result": {
+    "yes": "35698964994156",
+    "abstain": "207828633",
+    "no": "10907176448",
+    "no_with_veto": "0"
+  },
+  "submit_time": "2022-09-07T09:01:27.687412381Z",
+  "deposit_end_time": "2022-09-08T09:01:27.687412381Z",
+  "total_deposit": [
+    {
+      "denom": "ukuji",
+      "amount": "10000000000"
+    }
+  ],
+  "voting_start_time": "2022-09-07T09:02:01.392643921Z",
+  "voting_end_time": "2022-09-09T09:02:01.392643921Z"
+}

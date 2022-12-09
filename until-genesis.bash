@@ -1,3 +1,6 @@
+#!/bin/bash
+
+
 # This script was initally written by a friend.  We have refactored it.
 
 set -euxo pipefail

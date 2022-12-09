@@ -1,3 +1,6 @@
+#!/bin/bash
+
+
 
 # get contract 11 from kujira mainnet
 ./core/build/kujirad --node https://kujira-rpc.polkachu.com:443 query wasm list-contract-by-code 11
