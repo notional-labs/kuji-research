@@ -26,7 +26,6 @@ echo "validator" > addresses
 
 	
 sed -i '' 's/stake/ukuji/g' data/config/genesis.json
-	
 sed -i '' 's/172800s/60s/g' data/config/genesis.json
 
 # add accounts to genesis
