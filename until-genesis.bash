@@ -1,5 +1,5 @@
-# This script was initally written by a concerned friend
-# we're deeply grateful
+# This script was initally written by a friend.  We have refactored it.
+
 set -euxo pipefail
 
 # clone the kujira repository
