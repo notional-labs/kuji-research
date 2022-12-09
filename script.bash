@@ -17,11 +17,15 @@
 # check genesis to ensure that it is valid
 ./core/build/kujirad --home data validate-genesis
 
-# get our "valoper" - alidator operator address
+# get our validator address, see if it is ready to rock
 ./core/build/kujirad query account "$(./core/build/kujirad --home data --keyring-backend test keys show validator -a)"
 
 
-./core/build/kujirad --home data --keyring-backend test tx gov submit-proposal instantiate-contract 1 '{"owner": "kujira1qwdq29e43f4gpr3d0m7sl88a5n29pnwz3g5tc0", "denom": "uusk" }' --label "USK Controller" --title  "Deploy the USK Controller Contract" --description  "The USK protocol will have multiple markets that use multiple collateral types to mint USK. This contract acts as a simple controller, accessing the underlying denom module from the chain core; authorizing each individual market and routing messages to mint and burn USK" --run-as kujira1v7d5j88ytcu4940xrh70nj9ktkyvv0xrwzfjmc --admin kujira1v7d5j88ytcu4940xrh70nj9ktkyvv0xrwzfjmc --amount 10000000000ukuji --from admin --gas auto -y --broadcast-mode block --gas-adjustment 3
+
+./core/build/kujirad --home data --keyring-backend test tx wasm store contract/code-11.wasm --from admin --gas auto -y --broadcast-mode block --gas-adjustment 3
+
+
+./core/build/kujirad --home data --keyring-backend test tx gov submit-proposal instantiate-contract 1 '{"owner": "kujira1k8wkclcx3w6rgxhxjzq4dvv0yy5z2qxdfjhphk", "denom": "uusk" }' --label "USK Controller" --title  "Deploy the USK Controller Contract" --description  "The USK protocol will have multiple markets that use multiple collateral types to mint USK. This contract acts as a simple controller, accessing the underlying denom module from the chain core; authorizing each individual market and routing messages to mint and burn USK" --run-as kujira1k8wkclcx3w6rgxhxjzq4dvv0yy5z2qxdfjhphk --admin kujira1k8wkclcx3w6rgxhxjzq4dvv0yy5z2qxdfjhphk --amount 10000000000ukuji --from kujira1k8wkclcx3w6rgxhxjzq4dvv0yy5z2qxdfjhphk --gas auto -y --broadcast-mode block --gas-adjustment 3
 
 ./core/build/kujirad --home data --keyring-backend test tx gov deposit 1 10000000000ukuji --from validator --broadcast-mode block -y
 

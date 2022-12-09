@@ -28,6 +28,7 @@ cd ../
 
 # inspect genesis and ensure the network will start
 # basically change the denom to ukuji from "stake"
+# also need to make gov pass really, really fast
 cp data/config/genesis.json data/config/genesis.json.orig
 nvim data/config/genesis.json
 cp data/config/genesis.json data/config/genesis.json.fixup
