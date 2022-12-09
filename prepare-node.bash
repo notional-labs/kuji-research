@@ -12,6 +12,14 @@ set -euxo pipefail
 ./core/build/kujirad --home data --keyring-backend test keys add user
 ./core/build/kujirad --home data --keyring-backend test keys add luser
 
+echo "validator" > addresses
+./core/build/kujirad --home data --keyring-backend test keys show validator -a >> addresses
+./core/build/kujirad --home data --keyring-backend test keys show admin -a >> addresses
+./core/build/kujirad --home data --keyring-backend test keys show owner -a >> addresses
+./core/build/kujirad --home data --keyring-backend test keys show user -a >> addresses
+./core/build/kujirad --home data --keyring-backend test keys show luser -a >> addresses
+
+
 # inspect genesis and ensure the network will start
 # basically change the denom to ukuji from "stake"
 # also need to make gov pass really, really fast
@@ -24,6 +32,8 @@ sed -i 's/172800s/60s/g' data/config/genesis.json
 ./core/build/kujirad --home data --keyring-backend test add-genesis-account admin      100000000000ukuji
 ./core/build/kujirad --home data --keyring-backend test add-genesis-account user       100000000000ukuji
 ./core/build/kujirad --home data --keyring-backend test add-genesis-account owner      100000000000ukuji
+./core/build/kujirad --home data --keyring-backend test add-genesis-account luser      100000000000ukuji
+
 
 # create a genesis transaction
 ./core/build/kujirad --home data --keyring-backend test gentx validator 500000000000ukuji --chain-id kujira
