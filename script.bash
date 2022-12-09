@@ -1,33 +1,3 @@
-# This script was initally written by a concerned friend
-# we're deeply grateful
-
-
-# clone the kujira repository
-git clone https://github.com/Team-Kujira/core
-
-# enter the repository
-cd core
-make build
-
-
-# create keys for testing
-./core/build/kujirad --home data --keyring-backend test keys add validator
-./core/build/kujirad --home data --keyring-backend test keys add admin
-./core/build/kujirad --home data --keyring-backend test keys add owner
-./core/build/kujirad --home data --keyring-backend test keys add user
-./core/build/kujirad --home data --keyring-backend test keys add luser
-
-
-
-# init a validator
-./core/build/kujirad --home data init test-validator
-
-# inspect genesis and ensure the network will start
-cp data/config/genesis.json data/config/genesis.json.orig
-nvim data/config/genesis.json
-cp data/config/genesis.json data/config/genesis.json.fixup
-
-
 # add accounts to genesis
 ./core/build/kujirad --home data --keyring-backend test add-genesis-account validator 1000000000000ukuji
 ./core/build/kujirad --home data --keyring-backend test add-genesis-account admin      100000000000ukuji
@@ -46,7 +16,6 @@ cp data/config/genesis.json data/config/genesis.json.fixup
 
 # start a single node test network
 ./core/build/kujirad --home data start
-
 
 # get our "valoper" - alidator operator address
 ./core/build/kujirad query account $(./core/build/kujirad --home data --keyring-backend test keys show validator -a)
