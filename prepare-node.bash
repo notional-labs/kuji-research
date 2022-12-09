@@ -24,8 +24,10 @@ echo "validator" > addresses
 # basically change the denom to ukuji from "stake"
 # also need to make gov pass really, really fast
 
-sed -i 's/stake/ukuji/g' data/config/genesis.json
-sed -i 's/172800s/60s/g' data/config/genesis.json
+	
+sed -i '' 's/stake/ukuji/g' data/config/genesis.json
+	
+sed -i '' 's/172800s/60s/g' data/config/genesis.json
 
 # add accounts to genesis
 ./core/build/kujirad --home data --keyring-backend test add-genesis-account validator 1000000000000ukuji
