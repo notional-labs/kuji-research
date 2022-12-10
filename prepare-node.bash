@@ -2,6 +2,8 @@
 
 set -euxo pipefail
 
+
+
 # init a validator
 ./core/build/kujirad --home data init test-validator
 
