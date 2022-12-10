@@ -1,5 +1,7 @@
 # Kujira threat report
 
+https://www.youtube.com/watch?v=zz9auv3wTXA
+
 ## Produced for the Cosmos community by Notional Labs
 
 This repository can be used to conclusively confirm that the USK "fully collateralized stablecoin" can be arbitarily minted by the contract admin.
